@@ -30,7 +30,7 @@ textarea {
   font-weight: bold;
   margin-top: 20px;
   width: 348px;
-  height: 210px;
+  min-height: 210px;
   border: 1px solid rgb(231, 231, 231);
   background-color: rgb(231, 231, 231);
   color: rgb(77, 77, 77);

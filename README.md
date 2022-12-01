@@ -29,3 +29,7 @@ The User Interface will have to look good but should remain simple (additional f
 
 - [Iterate Object in JavaScript](https://www.javascripttutorial.net/object/iterate-object-in-javascript/)
 - [Looping through objects keys and values in Javascript?](https://flexiple.com/loop-through-object-javascript/)
+
+## Resources
+
+- https://bobbyhadz.com/blog/javascript-get-object-key-by-value
