@@ -6,27 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
 
-    <title>Morse-Translator</title>
+    <title>Morse Code Translator</title>
 
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
   </head>
 
   <body>
     <div class="container">
-      <h1>Morse-Translator</h1>
-      <div class="morse__Output">
+      <h1>Morse Code Translator</h1>
+      <h4>Output</h4>
+      <div class="app__Output">
         <p id="appOutput">
-          Please input your morse code below to be translated to English.
+          .--. .-.. . .- ... . / .. -. .--. ..- - / -.-- --- ..- .-. / -- ---
+          .-. ... . / -.-. --- -.. . / -... . .-.. --- .-- / - --- / -... . / -
+          .-. .- -. ... .-.. .- - . -.. / - --- / . -. --. .-.. .. ... ....
+          .-.-.-
         </p>
       </div>
-      <div class="morse__Input">
-        <h4>Input:</h4>
+      <div class="app__Input">
+        <h4>Input</h4>
+        <p id="langDetected">Language Detected:</p>
         <textarea
           name="userInput"
           id="userInput"
           cols="30"
           rows="10"
-          placeholder=".--. .-.. . .- ... . / .. -. .--. ..- - / -.-- --- ..- .-. / -- --- .-. ... . / -.-. --- -.. . / -... . .-.. --- .-- / - --- / -... . / - .-. .- -. ... .-.. .- - . -.. / - --- / . -. --. .-.. .. ... .... .-.-.-"
+          placeholder="Please input your message that needs to be translated"
         ></textarea>
       </div>
     </div>
