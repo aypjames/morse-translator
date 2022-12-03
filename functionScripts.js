@@ -57,6 +57,13 @@ export const checkNormOrMorse = (string) => {
   }
 };
 
+export const invalidCharCheck = (string) => {
+  const StrToArr = string.split("");
+  const invalidChars = /^[a-zA-Z0-9-/.]*$/;
+  const invalidCharsArr = StrToArr.filter((y) => !y.match(invalidChars));
+  return invalidCharsArr;
+};
+
 export const convertNormToMorse = (string) => {
   // Converts the String to UpperCase
   // Splits the string to individual characters in an array.
@@ -65,7 +72,9 @@ export const convertNormToMorse = (string) => {
 
   const morseStrToUpperCase = string.toUpperCase();
   const morseStrToArr = morseStrToUpperCase.split("");
+
   const normToMorse = morseStrToArr.map((X) => morseAlphabet[X]);
+
   const outPut = normToMorse.join(" ");
 
   return outPut;

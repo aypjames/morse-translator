@@ -36,3 +36,10 @@ textarea {
   color: rgb(77, 77, 77);
   padding: 10px;
 }
+
+.app__Invalids {
+  background-color: rgb(231, 231, 231);
+  padding: 10px;
+  border: 1px solid rgb(231, 231, 231);
+  width: 348px;
+}

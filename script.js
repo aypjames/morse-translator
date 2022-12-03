@@ -1,5 +1,6 @@
 import {
   checkNormOrMorse,
+  invalidCharCheck,
   convertNormToMorse,
   convertMorseToNorm,
 } from "./functionScripts.js";
@@ -8,6 +9,8 @@ import {
 
 const userInput = document.getElementById("userInput");
 const appOutput = document.getElementById("appOutput");
+const invalidInputs = document.getElementById("invalidInputs");
+const langDetected = document.getElementById("langDetected");
 // Gathering Inputs and posting outputs.
 
 const domManipulation = () => {
@@ -17,6 +20,17 @@ const domManipulation = () => {
     const inputValue = userInput.value;
 
     const langCheck = checkNormOrMorse(inputValue);
+
+    const invalidCharList = invalidCharCheck(inputValue);
+
+    if (!invalidCharList.length) {
+      const message = `The following characters are invalid and have been ignored in the translation: ${invalidCharList.join(
+        ", "
+      )}`;
+      invalidInputs.innerText = message;
+    } else {
+      invalidInputs.innerText = "";
+    }
 
     let convertedText = "";
 
