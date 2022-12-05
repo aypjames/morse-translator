@@ -34,3 +34,7 @@ The User Interface will have to look good but should remain simple (additional f
 
 - https://bobbyhadz.com/blog/javascript-get-object-key-by-value
 - https://stackoverflow.com/questions/4244109/regular-expression-to-accept-only-characters-a-z-in-a-textbox
+
+## Challenges
+
+- Testing!

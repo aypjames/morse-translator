@@ -1,5 +1,6 @@
 import {
   checkNormOrMorse,
+  invalidCharCheck,
   convertNormToMorse,
   convertMorseToNorm,
 } from "./functionScripts.js";
@@ -14,7 +15,6 @@ describe("Tests whether the input from the user is Normal Text, Morse Code or an
   it("Should return 'Normal Text', if input text is every other character'", () => {
     expect(checkNormOrMorse("hello world")).toBe("Normal Text");
     expect(checkNormOrMorse("0900-/.")).toBe("Normal Text");
-    expect(checkNormOrMorse("@@@")).toBe("Normal Text");
   });
 
   it("Should throw an error for invalid characters", () => {
@@ -31,7 +31,15 @@ describe("Testing that a 'normal' text string is converted into morse code", () 
     );
     expect(convertNormToMorse("hello")).toBe(".... . .-.. .-.. ---");
     expect(convertNormToMorse("h")).toBe("....");
-    expect(convertNormToMorse("@")).toBe(".--.-.");
+    // expect(convertNormToMorse("@")).toBe(".--.-.");
+  });
+});
+
+describe("Testing that invalid characters in inputs are identified and returned as an array", () => {
+  // it("Should return an array of the invalid characters. i.e. characters not in the MorseAlpabet Object", () => {
+  //   // expect(invalidCharCheck("*")).toBe("[' * ']");
+    expect(invalidCharCheck("h")).toBe([]);
+    expect(invalidCharCheck("hello@")).toBe(["@"]);
   });
 });
 
@@ -42,6 +50,6 @@ describe("Testing that a morse code string is converted into 'normal' text", () 
     ).toBe("hello world");
     expect(convertMorseToNorm(".... . .-.. .-.. ---")).toBe("hello");
     expect(convertMorseToNorm("....")).toBe("h");
-    expect(convertMorseToNorm(".--.-.")).toBe("@");
+    // expect(convertMorseToNorm(".--.-.")).toBe("@");
   });
 });

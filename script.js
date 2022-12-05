@@ -16,20 +16,22 @@ const langDetected = document.getElementById("langDetected");
 const domManipulation = () => {
   userInput.addEventListener("keyup", () => {
     appOutput.innerText = "";
+    invalidInputs.innerText = "";
 
     const inputValue = userInput.value;
 
     const langCheck = checkNormOrMorse(inputValue);
 
     const invalidCharList = invalidCharCheck(inputValue);
+    console.log(invalidCharList);
 
     if (!invalidCharList.length) {
+      invalidInputs.innerText = "";
+    } else {
       const message = `The following characters are invalid and have been ignored in the translation: ${invalidCharList.join(
         ", "
       )}`;
       invalidInputs.innerText = message;
-    } else {
-      invalidInputs.innerText = "";
     }
 
     let convertedText = "";
